@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Send Message</title>
+        <style>
+            .prompt {
+                font-size: 16px;
+                color: rgb(42, 165, 93);
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .container {
+                width: 50%;
+            }
+            .left-pane {
+                width: 50%;
+                float: left;
+            }
+            /*
+            qqq ffff ddd fff eee rrr ttt ss ddd fff ggg hh qqq www
+            */
+            .right-pane {
+                width: 50%;
+                float: right;
+            }
+            .submit-name {
+                clear: both;
+            }
+        </style>
+    </head>
+<body>
+    
+    <h1>Message system</h1>
+
+   
+        <div class="container">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" />
+                <button type="submit">Upload</button>
+            </form>       
+        </div>   
+</body>
+</html>

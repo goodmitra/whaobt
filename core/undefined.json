@@ -1,0 +1,72 @@
+{
+  "creds": {
+    "noiseKey": {
+      "private": {
+        "type": "Buffer",
+        "data": "+DtB5Yq/74zbyjWi6hPKj9tYcEeg7srBD0ejXNNNOW4="
+      },
+      "public": {
+        "type": "Buffer",
+        "data": "pisXPH7mRfQRG+QUtZC2SygiP80PdQtyyXdL3/yMtwA="
+      }
+    },
+    "signedIdentityKey": {
+      "private": {
+        "type": "Buffer",
+        "data": "GK4Hr6c2Lg+3qrD6apwXBdSiO+tenlSsT9e2rmepEEA="
+      },
+      "public": {
+        "type": "Buffer",
+        "data": "YZbxnJyt0SGG4/ALanO04wrx+U60HsjNnbrd26qBhx4="
+      }
+    },
+    "signedPreKey": {
+      "keyPair": {
+        "private": {
+          "type": "Buffer",
+          "data": "kOf4dYaGpyeCgfzUPcItnVdJeEk+ptZV70er4r/7FXE="
+        },
+        "public": {
+          "type": "Buffer",
+          "data": "yveg2MYsv+0tr/aicp/f3P2sef04jXJegExJW5kO+kk="
+        }
+      },
+      "signature": {
+        "type": "Buffer",
+        "data": "s73cLIFU0jvpQHJUgW1p4AsFrWn5kaGm+HT8B/J+EjLzQ62TvMWUKau67t32hIpTLin6W/ErPwdNDydjQirkhA=="
+      },
+      "keyId": 1
+    },
+    "registrationId": 201,
+    "advSecretKey": "Va8Q8sMg6qefmWoJJnzPSK7I4M5SQ7rjwzp2qIwmFuA=",
+    "processedHistoryMessages": [],
+    "nextPreKeyId": 1,
+    "firstUnuploadedPreKeyId": 1,
+    "accountSettings": {
+      "unarchiveChats": false
+    },
+    "account": {
+      "details": "CNnBvcECENSKq6AGGAE=",
+      "accountSignatureKey": "EElcg8TI1NCEFSR908R8OztLZoTS5SbMlx+Y3kNG5zA=",
+      "accountSignature": "BZLfUxSzdNnup4c+Uz7DgLOdrG7AFeM7SME0O1c3LmN6gqBSy7TUs2EoywQftvgWHw6SJ2WdUAuROt6l3XTZCw==",
+      "deviceSignature": "mu0CmMCHJySRVACzf1AozUU82fJEsUv2jVIgh+9RPH2BVwuDis2W9niLbxi5ylTwPyDTRiWf8ZB3BLXsw3lchQ=="
+    },
+    "me": {
+      "id": "917665914233:75@s.whatsapp.net"
+    },
+    "signalIdentities": [
+      {
+        "identifier": {
+          "name": "917665914233:75@s.whatsapp.net",
+          "deviceId": 0
+        },
+        "identifierKey": {
+          "type": "Buffer",
+          "data": "BRBJXIPEyNTQhBUkfdPEfDs7S2aE0uUmzJcfmN5DRucw"
+        }
+      }
+    ],
+    "platform": "android"
+  },
+  "keys": {}
+}
