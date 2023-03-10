@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GPSGGC Online Whatsapp API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div id="app" class="container">
+        <h2 class="block-title">GPSGGC Online Whatsapp API</h2>
+        <!--<p>visit to <a href="/device" target="_blank">Try </a>:</p>-->
+        <hr>
+           <h3 class="block-title">Send Whatsapp Message</h3>
+          <p style="line-height:1.5">Send a message to the user</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="small">Scan Qrcode</p>
+                    <img src="" alt="QR Code" id="qrcode">
+                </div>
+
+                <div class="col-sm-6">
+                    <span id="ref4"></span><br/>
+                    <span id="ref7"><a href="/send"> send</a></span><br/>
+                     <span id="ref"></span>
+                    <h5>Status Logs:</h5>
+                        <ul class="logs"></ul>
+                        <span id="ref2"></span>
+                        <span id="ref3"></span>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+    
+    const url = window.location.href;
+    const lastSegment = url.split("/").pop();
+
+            var socket = io();
+            
+            
+            socket.emit('StartConnection',lastSegment);
+            socket.on('message', function (msg) {
+
+                $('.logs').append($('<li>').text(msg));
+            });            
+
+            socket.on('qr', function (src) {
+                $('#qrcode').attr('src', src);
+                $('#qrcode').show();
+                $('#ref7').hide();
+                
+            });
+
+            socket.on('ready', function (data) {
+                $('#logout').attr('href', '/logout/' + data);
+                $("#ref").html('<button class="btn btn-danger mb-3" id="logout" onclick="logout('+data+')">Logout</button>');
+                $('#qrcode').hide();
+                $("#ref4").html('<h5>Connected No:- '+data+'</h5>');
+                $('#ref7').show();
+                
+            });
+
+            socket.on("sent", function (data) {
+                $("#ref2").html('<button class="btn btn-success mb-3" id="backit" onclick="backit()">Login This No</button>');
+                $('#qrcode').hide();
+                $("#ref4").html('<h5>loda Connected No:- '+data+'</h5>');
+                $('#ref7').show();
+                
+            });
+        
+           function logout(device){
+            socket.emit('LogoutDevice',device);
+            
+             $("#ref2").html('<button class="btn btn-success mb-3" id="backit" onclick="backit()">Login This No</button>');
+             
+             $("#ref3").html('<button class="btn btn-info mb-3" id="newit" onclick="newit()">Login New No</button>');
+            
+            } 
+            
+             function newit(){
+                 window.location.href = 'http://www.app.goodmitra.com';
+            }
+            
+             function backit(){
+                  location.reload();
+            }
+
+            
+    </script>
+</body>
+
+</html>

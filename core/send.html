@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Send Message</title>
+        <style>
+            .prompt {
+                font-size: 16px;
+                color: rgb(42, 165, 93);
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .container {
+                width: 50%;
+            }
+            .left-pane {
+                width: 50%;
+                float: left;
+            }
+            /*
+            qqq ffff ddd fff eee rrr ttt ss ddd fff ggg hh qqq www
+            */
+            .right-pane {
+                width: 50%;
+                float: right;
+            }
+            .submit-name {
+                clear: both;
+            }
+        </style>
+    </head>
+<body>
+    
+    <h1>Message system</h1>
+
+    <form method='post' action="/send">
+        <div class="container">
+            <div class="prompt left-pane">
+                <span>Send Whatsapp Message</span>
+            </div><br/>
+            <div >
+                <level>Sender Id:- </level>
+                <input type="text" id="number" name="number" value="" placeholder="number"/>
+            </div><br/>
+            <div >
+                <level>Message Type:- </level>
+                <input type="text" id="type" name="type" value="chat" placeholder="type" />
+            </div><br/>
+            <div >
+                <level>Message:- </level>
+                <input type="text" id="message" name="message" placeholder="message" />
+            </div><br/>            
+            <div >
+                <level>Send to Number:- </level>
+                <input type="text" id="to" name="to" placeholder="to"/>
+            </div><br/>
+        </div>
+        <div class="submit-name">
+            <input type="submit" value="Send" />
+        </div>
+        </div>
+    </form>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+         $(document).ready(function() {
+
+            const url = window.location.href;
+            const lastSegment = url.split("/").pop();
+            var socket = io();             
+            socket.on('message', function(msg) {
+                $('.logs').append($('<li>').text(msg));
+            })
+        });   
+      </script>
+    <ul class="logs"></ul>
+</body>
+</html>
